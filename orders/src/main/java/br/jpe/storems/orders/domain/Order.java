@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -42,6 +43,7 @@ public class Order {
 	private ZonedDateTime entryDate;
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@OrderBy("sequence")
 	@Builder.Default()
 	private Set<OrderItem> items = new HashSet<>();
 

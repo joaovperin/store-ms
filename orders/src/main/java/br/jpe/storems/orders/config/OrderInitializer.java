@@ -26,15 +26,15 @@ public class OrderInitializer implements ApplicationRunner {
 		var list = List.of(Order.builder().customerId(1L).totalValue(BigDecimal.valueOf(100))
 				.entryDate(ZonedDateTime.now())
 				.items(Set.of(
-						OrderItem.builder().orderId(1L).sequence(1).productId(100L).quantity(BigDecimal.ONE)
+						OrderItem.builder().orderId(1L).sequence(1).productId(1L).quantity(BigDecimal.ONE)
 								.unitValue(BigDecimal.ONE).totalValue(BigDecimal.ONE).build(),
-						OrderItem.builder().orderId(1L).sequence(2).productId(102L).quantity(BigDecimal.valueOf(5))
+						OrderItem.builder().orderId(1L).sequence(2).productId(2L).quantity(BigDecimal.valueOf(5))
 								.unitValue(BigDecimal.TEN).totalValue(BigDecimal.valueOf(50)).build()))
 				.build(),
-				Order.builder().customerId(3L).totalValue(BigDecimal.valueOf(20))
+				Order.builder().customerId(2L).totalValue(BigDecimal.valueOf(20))
 						.entryDate(ZonedDateTime.now().minus(Duration.ofDays(3)))
 						.items(Set
-								.of(OrderItem.builder().orderId(2L).sequence(1).productId(105L).quantity(BigDecimal.TEN)
+								.of(OrderItem.builder().orderId(2L).sequence(1).productId(3L).quantity(BigDecimal.TEN)
 										.unitValue(BigDecimal.valueOf(2)).totalValue(BigDecimal.valueOf(20)).build()))
 						.build());
 		orderRepository.saveAll(list);

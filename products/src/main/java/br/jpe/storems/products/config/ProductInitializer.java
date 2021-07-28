@@ -19,7 +19,8 @@ public class ProductInitializer implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		var list = List.of(Product.builder().description("potato").price(BigDecimal.ONE).build(),
-				Product.builder().description("potato").price(BigDecimal.TEN).build());
+				Product.builder().description("tomato").price(BigDecimal.TEN).build(),
+				Product.builder().description("chocolate").price(BigDecimal.valueOf(2)).build());
 		productRepository.saveAll(list);
 	}
 
