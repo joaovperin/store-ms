@@ -26,7 +26,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Customer> findCustomerById(@PathVariable Long id) {
+	public ResponseEntity<Customer> findById(@PathVariable Long id) {
 		var result = repository.findById(id);
 		if (result.isPresent()) {
 			return ResponseEntity.ok(result.get());
