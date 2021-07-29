@@ -24,6 +24,8 @@ public class OrderItemResponse {
 	private BigDecimal unitValue;
 
 	private BigDecimal totalValue;
+	
+	private Long productId;
 
 	private ProductResponse product;
 

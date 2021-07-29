@@ -21,6 +21,8 @@ public class OrderResponse {
 	private BigDecimal totalValue;
 
 	private ZonedDateTime entryDate;
+	
+	private Long customerId;
 
 	private CustomerResponse customer;
 

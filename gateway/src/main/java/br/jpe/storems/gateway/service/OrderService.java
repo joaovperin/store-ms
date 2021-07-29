@@ -15,8 +15,9 @@ public class OrderService {
 	@Autowired
 	ProducerTemplate template;
 
-	public List list() {
-		return template.requestBody(GatewayCamelRouter.ORDER, null, List.class);
+	public List<OrderResponse> list() {
+		var res = template.requestBody(GatewayCamelRouter.ORDER, null, List.class);
+		return res;
 	}
 
 }

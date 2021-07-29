@@ -1,17 +1,18 @@
 package br.jpe.storems.gateway.camel.processors;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
+import java.util.ArrayList;
 
-import com.sun.xml.bind.v2.schemagen.xmlschema.List;
+import org.apache.camel.Exchange;
+import org.apache.camel.Message;
+import org.apache.camel.Processor;
 
 public class OrderProcessor implements Processor {
 
 	@Override
 	public void process(Exchange exchange) throws Exception {
-		List body = exchange.getIn().getBody(List.class);
+		Message input = exchange.getIn();
+		var body = input.getBody(ArrayList.class);
 		exchange.setProperty("order", body);
-		exchange.getMessage().setBody(body);
 	}
 
 }
